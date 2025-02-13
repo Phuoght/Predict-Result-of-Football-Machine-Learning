@@ -1,0 +1,75 @@
+body {
+     position: relative;
+     background-image: url('../static/Images/Premier_League.jpg');
+     background-size: cover;
+     opacity: 0.8;
+}
+
+#title {
+     font-weight: bolder;
+     text-align: center;
+     font-size: 27px;
+     color: yellow;
+}
+
+.container{
+     display: flex;
+}
+
+#doinha, #doikhach, #auto_img_doinha, #auto_ing_doikhach{
+     width: 25%;
+
+}
+
+#choose, #result{
+     width: 50%;
+}
+
+#choose{
+     margin-top: 100px;
+}
+
+#hold{
+     margin-top: 30px;
+}
+#text1{
+     color: rgb(234, 76, 76);
+     font-size: 25px;
+     margin-left: 150px;
+}
+
+#text2{
+     color: rgb(69, 69, 197);
+     font-size: 25px;
+     margin-left: 150px;
+}
+
+#choose_home{
+     font-size: 18.8px;
+     color: red;
+}
+#choose_away{
+     color: rgb(69, 69, 197);
+     font-size: 18.8px;
+     margin-left: 24px;
+}
+
+#predict{
+     margin-left: 300px;
+     font-size: 25px;
+     cursor: pointer;
+     background-color: cornsilk;
+     color: red;
+     margin-top: 45px;
+     border: solid 2px crimson;
+}
+
+#predict:hover{
+     font-size: 24.5px;
+}
+
+.result{
+     color: red;
+     font-size: 30px;
+     text-align: center;
+}

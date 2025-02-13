@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán bóng đá</title>
+    <style>
+          body {
+               font-family: Arial, sans-serif;
+               color: white;
+               padding: 20px;
+               position: relative;
+               background-image: url('../static/Images/Premier_League.jpg');
+               background-size: cover;
+               opacity: 0.8;
+          }
+          #title {
+               font-weight: bolder;
+               text-align: center;
+               font-size: 27px;
+               color: yellow;
+          }
+          #result{
+               color: red;
+          }
+          h1, h2 {
+               color: white;
+          }
+          table {
+               width: 100%;
+               max-width: 600px;
+               margin: 20px 0;
+               border-collapse: collapse;
+               background-color: #fff;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+               border-radius: 8px;
+               overflow: hidden;
+          }
+          th, td {
+               padding: 12px 15px;
+               text-align: center;
+               border-bottom: 1px solid #ddd;
+          }
+          th {
+               background-color: #3498db;
+               color: #fff;
+               font-weight: 600;
+               text-transform: uppercase;
+          }
+          td {
+               font-size: 14px;
+               color: #555;
+          }
+          tr:last-child td {
+               border-bottom: none;
+          }
+          tr:nth-child(even) td {
+               background-color: #f9f9f9;
+          }
+          tr:hover td {
+               background-color: #f1f7ff;
+          }
+          .back-link {
+               display: inline-block;
+               margin-top: 20px;
+               text-decoration: none;
+               color: #3498db;
+               font-weight: bold;
+          }
+          .back-link:hover {
+               color: #2980b9;
+          }
+          img {
+               max-width: 600px;
+               border-radius: 8px;
+               margin-bottom: 20px;
+          }
+          .stats-container {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+          }
+    </style>
+</head>
+<body>
+     <h1 id="title">Dự Đoán Kết Quả Bóng Đá Premier League</h1>
+     <div class="stats-container">
+          <h1>Dự đoán {{ team_home }} VS {{ team_away }}</h1>
+          <h1 id="result">Kết quả: {{ result }}</h1>
+          <!-- Thống kê đội bóng -->
+          <h2>Thống kê đội bóng</h2>
+          <table>
+               <tr>
+                    <th>Đội</th>
+                    <th>Tỉ lệ thắng</th>
+                    <th>Bàn thắng mỗi trận đấu</th>
+                    <th>Phong độ gần đây</th>
+               </tr>
+               <tr>
+                    <td>{{ team_home }}</td>
+                    <td>{{ home_win_rate }}</td>
+                    <td>{{ home_goals_per_match }}</td>
+                    <td>{{ recent_home_form }}</td>
+               </tr>
+               <tr>
+                    <td>{{ team_away }}</td>
+                    <td>{{ away_win_rate }}</td>
+                    <td>{{ away_goals_per_match }}</td>
+                    <td>{{ recent_away_form }}</td>
+               </tr>
+          </table>
+
+          <!-- Lịch sử đối đầu -->
+          <h2>Lịch sử đối đầu ở Premier League từ 2015 - nay</h2>
+          <table>
+               <tr>
+                    <th>{{ team_home}} thắng</th>
+                    <th>{{ team_away}} thắng</th>
+                    <th>Hòa</th>
+               </tr>
+               <tr>
+                    <td>{{ head_to_head_stats['Tổng số trận thắng đội chủ nhà'] }}</td>
+                    <td>{{ head_to_head_stats['Tổng số trận thắng đội khách'] }}</td>
+                    <td>{{ head_to_head_stats['Tổng số trận hòa'] }}</td>
+               </tr>
+          </table>
+
+          <!-- Trở lại trang nhập dữ liệu -->
+          <a href="/" class="back-link">← Trở về</a>
+     </div>
+</body>
+</html>
